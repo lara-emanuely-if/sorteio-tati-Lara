@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import React, { useState } from 'react'
 import './App.css';
 
 function App() {
+
+  const [ numero, setNumero] = useState(0);  
+
+  function handleSorteio() {
+      let aleatorio = (Math.floor(Math.random() * 100));
+      setNumero(aleatorio)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App-header'>
+        <h1>
+       Sorteio
+        </h1>
+        <div>
+      <h1>Sorteio de números aleátorios (1-100)</h1>
+      <input tex="name" type='button' title="Sorteio" onClick={handleSorteio}/>
+      <h1>Número Aleátorio: {numero}</h1>
+    </div>
+       
+  
     </div>
   );
 }
